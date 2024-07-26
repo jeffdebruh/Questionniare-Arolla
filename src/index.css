@@ -1,13 +1,139 @@
+/* Réinitialisation */
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+/* Conteneur Survey */
+.sv_container {
+  background-color: #e6ffe6;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* En-tête Survey */
+.sv_header {
+  background-color: #ccffcc;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+}
+
+/* Titre Survey */
+.sv_title {
+  font-size: 24px !important;
+  color: #333 !important;
+  text-align: center;
+}
+
+/* Styles personnalisés pour les cases à cocher */
+.sv_qcbc .sv_q_checkbox{
+  display: inline-block !important;
+  width: 23% !important;
+  margin: 1% !important;
+  background-color: white !important;
+  border: 2px solid #333 !important; /* Bordure plus foncée */
+  border-radius: 10px !important; /* Coins arrondis */
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease !important;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative; /* Pour le pseudo-élément */
+}
+
+/* Masquer la case à cocher native */
+.sv_qcbc .sv_q_checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer !important;
+}
+
+/* Styles lorsque la case est cochée */
+.sv_qcbc .sv_q_checkbox input[type="checkbox"]:checked + .sv_q_checkbox_control_label {
+  color: #57de57;
+  cursor: pointer !important;
+}
+
+/* Label des cases à cocher */
+.sv_qcbc .sv_q_checkbox_control_label {
+  cursor: pointer !important;
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.sv_qcbc .sv_q_checkbox:hover {
+  background-color: #ccffcc !important;
+  border-color: #57de57 !important;
+}
+
+/* Styles du bouton Suivant */
+.sv_navigation .sv_btn {
+  background-color: #ccffcc !important;
+  color: #333 !important;
+  border: 2px solid #66cc66 !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  border-radius: 10px !important; /* Coins arrondis */
+  cursor: pointer !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.sv_navigation .sv_btn:hover {
+  background-color: #66cc66 !important;
+  color: white !important;
+}
+
+[data-name="question2"] .sv_q_imgsel input[type="checkbox"] {
+  display: none;
+}
+
+[data-name="question2"] .sv_q_imgsel {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+[data-name="question2"] .sv_q_imgsel.checked {
+  color: #FFFFFF !important;
+  border-color: #66cc66;
+}
+
+.sv_q_rating_item {
+  display: inline-block !important;
+  margin: 1% !important;
+  background-color: white !important;
+  text-align: center !important;
+  border: 3px solid #333 !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease !important;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sv_q_rating_item:hover {
+  background-color: #0B8080 !important;
+  border-radius: 5px !important;
+  color: white;
+}
+
+.sv_q_rating_item:active {
+  background-color: #0B8080 !important;
+}
+
+.sv_q_rating_item:checked{
+  background-color: #57de57;
+}
+
+.sv_matrix_cell_header{
+  align-content: center;
 }
